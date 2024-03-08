@@ -78,7 +78,7 @@ export default async function page({params}) {
       <TableCell className="w-[200px]">{item.timestart}-{item.timeend}</TableCell>
       <TableCell>{item.studentgmail}</TableCell>
       <TableCell className="text-right w-[150px]">{item.date}</TableCell>
-      <TableCell><Del item={item}/></TableCell>
+      <TableCell><Del item={item} data={data}/></TableCell>
     </TableRow>
     ))}
   </TableBody>

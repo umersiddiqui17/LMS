@@ -4,8 +4,9 @@ import React from 'react'
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
-export default function Del({item}) {
+export default function Del({item,data}) {
   const router = useRouter()
+  const teacherid = data._id
     const id = item._id
     console.log(id)
   
@@ -14,7 +15,7 @@ export default function Del({item}) {
     const handleDelete= async(e)=>{
         e.preventDefault()
         try {
-            const res = await axios.delete(`/api/slot?id=${id}`)
+            const res = await axios.delete(`/api/slot?id=${id}&teacherid=${teacherid}`)
             console.log(res.data)
             if(res){
               router.refresh()
